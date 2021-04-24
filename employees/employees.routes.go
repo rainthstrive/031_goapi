@@ -10,4 +10,5 @@ func Routes(e *echo.Echo) {
 	r := e.Group("/api")
 	r.Use(middleware.JWT([]byte("secret")))
 	r.GET("/employees", connectionSql)
+	r.POST("/employees", signup)
 }
